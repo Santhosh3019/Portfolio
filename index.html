@@ -586,7 +586,7 @@
                 <div class="grid md:grid-cols-12 gap-10 items-center">
                     <div class="md:col-span-8 space-y-6">
                         <h3 class="text-2xl font-semibold text-blue-400">Career Objective</h3>
-                        <p class="text-gray-300 leading-relaxed text-lg">
+                        <p class="text-gray-300 leading-relaxed text-lg" id="about-objective">
                             Results-driven SAP FICO Consultant with <span id="exp-inline">2</span> years of consultancy experience delivering robust financial solutions. Proven expertise in automating payment workflows (DMEE, F110) for J.P. Morgan corporate customers, and implementing real-time reporting (R2T2R) to ensure immediate balance visibility, streamline client reconciliation, and support critical financial operations.
                         </p>
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-gray-800 mt-6">
@@ -596,15 +596,15 @@
                             </div>
                             <div>
                                 <span class="block text-gray-500 text-sm mb-1">Role</span>
-                                <span class="font-semibold text-gray-200">SAP FICO Consultant</span>
+                                <span class="font-semibold text-gray-200" id="about-role">SAP FICO Consultant</span>
                             </div>
                             <div>
                                 <span class="block text-gray-500 text-sm mb-1">Specialty</span>
-                                <span class="font-semibold text-gray-200">DMEE & F110</span>
+                                <span class="font-semibold text-gray-200" id="about-specialty">DMEE & F110</span>
                             </div>
                             <div>
                                 <span class="block text-gray-500 text-sm mb-1">Location</span>
-                                <span class="font-semibold text-gray-200">Chennai</span>
+                                <span class="font-semibold text-gray-200" id="about-location">Chennai</span>
                             </div>
                         </div>
                     </div>
@@ -615,9 +615,9 @@
                                 class="w-20 h-20 mx-auto bg-[#1a1a1a] rounded-full flex items-center justify-center mb-4 shadow-lg border border-gray-800">
                                 <i class="fas fa-graduation-cap text-3xl text-blue-500"></i>
                             </div>
-                            <h4 class="text-lg font-semibold text-gray-200">Education</h4>
-                            <p class="text-sm text-gray-400 mt-2 font-medium">B.E. in Electronics & Communication Eng.</p>
-                            <p class="text-xs text-blue-400 mt-1">P.S.R Engineering College, Sivakasi</p>
+                            <h4 class="text-lg font-semibold text-gray-200" id="edu-degree">Education</h4>
+                            <p class="text-sm text-gray-400 mt-2 font-medium" id="edu-college">B.E. in Electronics & Communication Eng.</p>
+                            <p class="text-xs text-blue-400 mt-1" id="edu-dates">P.S.R Engineering College, Sivakasi</p>
                             <p class="text-xs text-gray-500 mt-1">Aug 2019 – April 2023</p>
                         </div>
                     </div>
@@ -635,77 +635,8 @@
                     Technical Skills</h2>
                 <p class="text-gray-400 mt-4 text-lg">My proven expertise and core competencies</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Group 1: SAP FI -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl border border-gray-800 shadow-xl">
-                    <h3 class="text-xl font-semibold mb-8 flex items-center text-blue-400">
-                        <span class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mr-4">
-                            <i class="fas fa-database text-blue-500"></i>
-                        </span>
-                        SAP FI Modules
-                    </h3>
-                    <div class="grid grid-cols-2 gap-5">
-                        <div
-                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] hover:border-emerald-500/50 bg-gradient-to-b hover:from-emerald-500/10 hover:to-transparent">
-                            <i
-                                class="fas fa-book-open text-3xl text-gray-500 group-hover:text-emerald-500 transition-colors mb-4 block"></i>
-                            <h4 class="font-medium text-gray-200 text-sm">General Ledger (GL)</h4>
-                        </div>
-                        <div
-                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(245,158,11,0.5)] hover:border-amber-500/50 bg-gradient-to-b hover:from-amber-500/10 hover:to-transparent">
-                            <i
-                                class="fas fa-file-invoice-dollar text-3xl text-gray-500 group-hover:text-amber-500 transition-colors mb-4 block"></i>
-                            <h4 class="font-medium text-gray-200 text-sm">Accounts Payable (AP)</h4>
-                        </div>
-                        <div
-                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:border-purple-500/50 bg-gradient-to-b hover:from-purple-500/10 hover:to-transparent">
-                            <i
-                                class="fas fa-hand-holding-usd text-3xl text-gray-500 group-hover:text-purple-500 transition-colors mb-4 block"></i>
-                            <h4 class="font-medium text-gray-200 text-sm">Accounts Receivable (AR)</h4>
-                        </div>
-                        <div
-                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(244,63,94,0.5)] hover:border-rose-500/50 bg-gradient-to-b hover:from-rose-500/10 hover:to-transparent">
-                            <i
-                                class="fas fa-building text-3xl text-gray-500 group-hover:text-rose-500 transition-colors mb-4 block"></i>
-                            <h4 class="font-medium text-gray-200 text-sm">Enterprise Structure</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Group 2: Technical -->
-                <div class="bg-[#0a0a0a] p-8 rounded-2xl border border-gray-800 shadow-xl">
-                    <h3 class="text-xl font-semibold mb-8 flex items-center text-blue-400">
-                        <span class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mr-4">
-                            <i class="fas fa-laptop-code text-blue-500"></i>
-                        </span>
-                        Technical & Testing Focus
-                    </h3>
-                    <div class="grid grid-cols-2 gap-5">
-                        <div
-                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:border-cyan-500/50 bg-gradient-to-b hover:from-cyan-500/10 hover:to-transparent">
-                            <i
-                                class="fas fa-cogs text-3xl text-gray-500 group-hover:text-cyan-500 transition-colors mb-4 block"></i>
-                            <h4 class="font-medium text-gray-200 text-sm">DMEE & F110 Auto</h4>
-                        </div>
-                        <div
-                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:border-blue-500/50 bg-gradient-to-b hover:from-blue-500/10 hover:to-transparent">
-                            <i
-                                class="fas fa-university text-3xl text-gray-500 group-hover:text-blue-500 transition-colors mb-4 block"></i>
-                            <h4 class="font-medium text-gray-200 text-sm">EBS (OT83) & Bank Recon</h4>
-                        </div>
-                        <div
-                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(249,115,22,0.5)] hover:border-orange-500/50 bg-gradient-to-b hover:from-orange-500/10 hover:to-transparent">
-                            <i
-                                class="fas fa-chart-line text-3xl text-gray-500 group-hover:text-orange-500 transition-colors mb-4 block"></i>
-                            <h4 class="font-medium text-gray-200 text-sm">Real-time Reporting (R2T2R)</h4>
-                        </div>
-                        <div
-                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(217,70,239,0.5)] hover:border-fuchsia-500/50 bg-gradient-to-b hover:from-fuchsia-500/10 hover:to-transparent">
-                            <i
-                                class="fas fa-tools text-3xl text-gray-500 group-hover:text-fuchsia-500 transition-colors mb-4 block"></i>
-                            <h4 class="font-medium text-gray-200 text-sm">Core FI Setup & Troubleshooting</h4>
-                        </div>
-                    </div>
-                </div>
+            <div class="grid md:grid-cols-2 gap-12" id="skills-container">
+                <!-- Skills dynamically rendered from PORTFOLIO_CONFIG -->
             </div>
         </div>
     </section>
@@ -724,39 +655,8 @@
                     <h3 class="text-2xl font-bold mb-10 flex items-center text-gray-100">
                         <i class="fas fa-briefcase text-blue-500 mr-4 text-xl"></i> Professional Journey
                     </h3>
-                    <div class="relative border-l-2 border-gray-800 ml-4 md:ml-6">
-                        <!-- Timeline Item 1 -->
-                        <div class="mb-12 pl-10 relative">
-                            <span
-                                class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-blue-500 ring-4 ring-black shadow-[0_0_10px_rgba(59,130,246,0.8)]"></span>
-                            <div
-                                class="glass-card p-7 rounded-xl border border-gray-800 transition-all duration-300 group shadow-lg hover:border-blue-500/50" data-aos="zoom-in-up">
-                                <span
-                                    class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block border border-blue-500/30">June
-                                    2024 - Present</span>
-                                <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">SAP FICO Consultant</h4>
-                                <p class="text-gray-400 font-medium mb-5 text-sm uppercase tracking-wide">Findroids Technology Solutions India Pvt. Ltd.</p>
-                                <ul class="space-y-3 text-gray-300 text-sm list-inside">
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0 text-xs"></i>
-                                        <span>Delivered ready-to-use <strong class="text-blue-400 font-semibold">DMEE structures and F110 pre-configuration templates</strong>, alongside end-to-end core setups, streamlining complex payment processes for J.P. Morgan corporate customers.</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0 text-xs"></i>
-                                        <span>Implemented <strong class="text-blue-400 font-semibold">R2T2R solutions</strong> for J.P. Morgan customers such as Pauls Corp and Fresenius, providing immediate financial balance visibility.</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Timeline Item 2 -->
-                        <div class="pl-10 relative">
-                            <span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-gray-700 ring-4 ring-black border-2 border-gray-500"></span>
-                            <div class="glass-card p-7 rounded-xl border border-gray-800 shadow-lg transition-all duration-300 group hover:border-blue-500/50" data-aos="zoom-in-up" data-aos-delay="100">
-                                <span class="bg-gray-800 text-gray-300 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">Earlier Consultancy</span>
-                                <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Profile Summary: Payment Initiation & Reporting</h4>
-                                <p class="text-gray-400 text-sm mt-2 leading-relaxed">Delivered dedicated consultancy in implementing real-time reporting solutions, enhancing daily reconciliation and data accuracy. Skilled in ensuring accurate payment file generation for clients operating as J.P. Morgan corporate customers.</p>
-                            </div>
-                        </div>
+                    <div class="relative border-l-2 border-gray-800 ml-4 md:ml-6" id="experience-container">
+                        <!-- Experience dynamically rendered from PORTFOLIO_CONFIG -->
                     </div>
                 </div>
                 <!-- Projects -->
@@ -764,50 +664,8 @@
                     <h3 class="text-2xl font-bold mb-10 flex items-center text-gray-100">
                         <i class="fas fa-project-diagram text-blue-500 mr-4 text-xl"></i> Key Projects
                     </h3>
-                    <div class="space-y-8">
-                        <!-- Project 1 -->
-                        <div data-aos="flip-up"
-                            class="glass-card p-8 rounded-xl border border-gray-800 transition-all duration-300 relative overflow-hidden group shadow-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] hover:border-blue-400 sap-data-card">
-                            <!-- Decorative background accent -->
-                            <div
-                                class="absolute -top-6 -right-6 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-all duration-500">
-                            </div>
-                            <div class="flex items-center justify-between mb-4">
-                                <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                                    Payment Initiation (J.P. Morgan)</h4>
-                                <i class="fas fa-file-invoice-dollar text-blue-500 text-3xl group-hover:animate-bounce"></i>
-                            </div>
-                            <p class="text-gray-300 text-sm mb-6 leading-relaxed relative z-10">Delivered ready-to-use DMEE structures and F110 pre-configuration templates, alongside comprehensive end-to-end core setups (FBZP, BP Grouping). Streamlined complex, high-volume payment processes for J.P. Morgan corporate customers including PTTEP and JL Cohen.</p>
-                            <div class="flex flex-wrap gap-2 text-xs relative z-10">
-                                <span
-                                    class="bg-blue-500/10 text-blue-300 px-3 py-1.5 rounded-md font-medium border border-blue-500/20">DMEE</span>
-                                <span
-                                    class="bg-blue-500/10 text-blue-300 px-3 py-1.5 rounded-md font-medium border border-blue-500/20">F110</span>
-                                <span
-                                    class="bg-blue-500/10 text-blue-300 px-3 py-1.5 rounded-md font-medium border border-blue-500/20">FBZP</span>
-                            </div>
-                        </div>
-                        <!-- Project 2 -->
-                        <div data-aos="flip-up" data-aos-delay="100"
-                            class="glass-card p-8 rounded-xl border border-gray-800 transition-all duration-300 relative overflow-hidden group shadow-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:border-cyan-400 sap-data-card">
-                            <div
-                                class="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/30 transition-all duration-500">
-                            </div>
-                            <div class="flex items-center justify-between mb-4">
-                                <h4 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-                                    R2T2R & EBS Uploads</h4>
-                                <i class="fas fa-chart-line text-cyan-500 text-3xl group-hover:animate-pulse"></i>
-                            </div>
-                            <p class="text-gray-300 text-sm mb-6 leading-relaxed relative z-10">Implemented Real-Time Transaction Reporting (R2T2R) solutions and Electronic Bank Statement (EBS) upload processes (OT83) for J.P. Morgan customers (Pauls Corp, Fresenius). Provided immediate financial balance visibility to enhance daily reconciliation workflows.</p>
-                            <div class="flex flex-wrap gap-2 text-xs relative z-10">
-                                <span
-                                    class="bg-cyan-500/10 text-cyan-300 px-3 py-1.5 rounded-md font-medium border border-cyan-500/20">R2T2R</span>
-                                <span
-                                    class="bg-cyan-500/10 text-cyan-300 px-3 py-1.5 rounded-md font-medium border border-cyan-500/20">OT83</span>
-                                <span
-                                    class="bg-cyan-500/10 text-cyan-300 px-3 py-1.5 rounded-md font-medium border border-cyan-500/20">Reconciliation</span>
-                            </div>
-                        </div>
+                    <div class="space-y-8" id="projects-container">
+                        <!-- Projects dynamically rendered from PORTFOLIO_CONFIG -->
                     </div>
                 </div>
             </div>
@@ -1003,14 +861,96 @@
         // CENTRAL SETTINGS - EDIT YOUR INFO HERE
         // ==========================================
         const PORTFOLIO_CONFIG = {
+            // General Info
             name: "Santhosh Kumar M",
             role: "SAP FICO Consultant",
             email: "connectwithsanthoshkumar.m@gmail.com",
             whatsapp: "916374652498",
             linkedin: "https://www.linkedin.com/in/santhosh-kumar-m-775619259/",
-            cv_link: "https://drive.google.com/file/d/19NhJXhfDlT9iBMs0zeCw5D4mXOf9Q6Mz/view?usp=sharing",
-            sap_portfolio_link: "https://drive.google.com/file/d/19NhJXhfDlT9iBMs0zeCw5D4mXOf9Q6Mz/view?usp=sharing",
-            experience_start_date: new Date(2024, 5, 1) // June 1, 2024
+            linkedin_handle: "Santhosh Kumar M",
+            cv_link: "https://drive.google.com/file/d/14bOPhtivBbFAsOyFWDwnYchEWqrzDuvv/view?usp=sharing",
+            experience_start_date: new Date(2024, 5, 1), // June 1, 2024
+
+            // Home Intro
+            intro_text: "Automating payment workflows (DMEE, F110) and implementing real-time reporting (R2T2R) to streamline client reconciliation and support critical financial operations.",
+            
+            // About Section
+            about_objective: "Results-driven SAP FICO Consultant with {EXP} years of consultancy experience delivering robust financial solutions. Proven expertise in automating payment workflows (DMEE, F110) for J.P. Morgan corporate customers, and implementing real-time reporting (R2T2R) to ensure immediate balance visibility, streamline client reconciliation, and support critical financial operations.",
+            about_role: "SAP FICO Consultant",
+            about_specialty: "DMEE & F110",
+            about_location: "Chennai",
+
+            // Education
+            education: {
+                degree: "B.E. in Electronics & Communication Eng.",
+                college: "P.S.R Engineering College, Sivakasi",
+                dates: "Aug 2019 – April 2023"
+            },
+
+            // Skills Section
+            skills_groups: [
+                {
+                    title: "SAP FI Modules",
+                    icon: "fas fa-database",
+                    items: [
+                        { name: "General Ledger (GL)", icon: "fas fa-book-open", color: "emerald" },
+                        { name: "Accounts Payable (AP)", icon: "fas fa-file-invoice-dollar", color: "amber" },
+                        { name: "Accounts Receivable (AR)", icon: "fas fa-hand-holding-usd", color: "purple" },
+                        { name: "Enterprise Structure", icon: "fas fa-building", color: "rose" }
+                    ]
+                },
+                {
+                    title: "Technical & Testing Focus",
+                    icon: "fas fa-laptop-code",
+                    items: [
+                        { name: "DMEE & F110 Auto", icon: "fas fa-cogs", color: "cyan" },
+                        { name: "EBS (OT83) & Bank Recon", icon: "fas fa-university", color: "blue" },
+                        { name: "Real-time Reporting (R2T2R)", icon: "fas fa-chart-line", color: "orange" },
+                        { name: "Core FI Setup & Troubleshooting", icon: "fas fa-tools", color: "fuchsia" }
+                    ]
+                }
+            ],
+
+            // Experience Section
+            experience: [
+                {
+                    dates: "June 2024 - Present",
+                    title: "SAP FICO Consultant",
+                    company: "Findroids Technology Solutions India Pvt. Ltd.",
+                    bullets: [
+                        "Delivered ready-to-use <strong class='text-blue-400 font-semibold'>DMEE structures and F110 pre-configuration templates</strong>, alongside end-to-end core setups, streamlining complex payment processes for J.P. Morgan corporate customers.",
+                        "Implemented <strong class='text-blue-400 font-semibold'>R2T2R solutions</strong> for J.P. Morgan customers such as Pauls Corp and Fresenius, providing immediate financial balance visibility."
+                    ],
+                    isActive: true
+                },
+                {
+                    dates: "Earlier Consultancy",
+                    title: "Profile Summary: Payment Initiation & Reporting",
+                    company: "",
+                    bullets: [
+                        "Delivered dedicated consultancy in implementing real-time reporting solutions, enhancing daily reconciliation and data accuracy. Skilled in ensuring accurate payment file generation for clients operating as J.P. Morgan corporate customers."
+                    ],
+                    isActive: false
+                }
+            ],
+
+            // Projects Section
+            projects: [
+                {
+                    title: "Payment Initiation (J.P. Morgan)",
+                    icon: "fas fa-file-invoice-dollar",
+                    color: "blue",
+                    desc: "Delivered ready-to-use DMEE structures and F110 pre-configuration templates, alongside comprehensive end-to-end core setups (FBZP, BP Grouping). Streamlined complex, high-volume payment processes for J.P. Morgan corporate customers including PTTEP and JL Cohen.",
+                    tags: ["DMEE", "F110", "FBZP"]
+                },
+                {
+                    title: "R2T2R & EBS Uploads",
+                    icon: "fas fa-chart-line",
+                    color: "cyan",
+                    desc: "Implemented Real-Time Transaction Reporting (R2T2R) solutions and Electronic Bank Statement (EBS) upload processes (OT83) for J.P. Morgan customers (Pauls Corp, Fresenius). Provided immediate financial balance visibility to enhance daily reconciliation workflows.",
+                    tags: ["R2T2R", "OT83", "Reconciliation"]
+                }
+            ]
         };
         // SAP Boot Loader Logic
         window.addEventListener('load', function() {
@@ -1025,6 +965,94 @@
 
         // Dynamic Data Binding
         document.addEventListener('DOMContentLoaded', function () {
+            // ==========================================
+            // TEMPLATE RENDERING LOGIC
+            // ==========================================
+            // About Section
+            const aboutObj = document.getElementById('about-objective');
+            if (aboutObj) aboutObj.innerHTML = PORTFOLIO_CONFIG.about_objective.replace('{EXP}', '<span id="exp-inline"></span>');
+            const aboutRole = document.getElementById('about-role');
+            if (aboutRole) aboutRole.textContent = PORTFOLIO_CONFIG.about_role;
+            const aboutSpec = document.getElementById('about-specialty');
+            if (aboutSpec) aboutSpec.textContent = PORTFOLIO_CONFIG.about_specialty;
+            const aboutLoc = document.getElementById('about-location');
+            if (aboutLoc) aboutLoc.textContent = PORTFOLIO_CONFIG.about_location;
+
+            // Education
+            const eduDeg = document.getElementById('edu-degree');
+            if (eduDeg) eduDeg.textContent = PORTFOLIO_CONFIG.education.degree;
+            const eduCol = document.getElementById('edu-college');
+            if (eduCol) eduCol.textContent = PORTFOLIO_CONFIG.education.college;
+            const eduDates = document.getElementById('edu-dates');
+            if (eduDates) eduDates.textContent = PORTFOLIO_CONFIG.education.dates;
+
+            // Skills
+            const skillsContainer = document.getElementById('skills-container');
+            if (skillsContainer && PORTFOLIO_CONFIG.skills_groups) {
+                skillsContainer.innerHTML = PORTFOLIO_CONFIG.skills_groups.map(group => `
+                    <div class="bg-[#0a0a0a] p-8 rounded-2xl border border-gray-800 shadow-xl">
+                        <h3 class="text-xl font-semibold mb-8 flex items-center text-blue-400">
+                            <span class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mr-4">
+                                <i class="${group.icon} text-blue-500"></i>
+                            </span>
+                            ${group.title}
+                        </h3>
+                        <div class="grid grid-cols-2 gap-5">
+                            ${group.items.map(item => `
+                                <div class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:border-${item.color}-500/50 bg-gradient-to-b hover:from-${item.color}-500/10 hover:to-transparent">
+                                    <i class="${item.icon} text-3xl text-gray-500 group-hover:text-${item.color}-500 transition-colors mb-4 block"></i>
+                                    <h4 class="font-medium text-gray-200 text-sm">${item.name}</h4>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Experience
+            const expContainer = document.getElementById('experience-container');
+            if (expContainer && PORTFOLIO_CONFIG.experience) {
+                expContainer.innerHTML = PORTFOLIO_CONFIG.experience.map((exp, i) => `
+                    <div class="${i === 0 ? 'mb-12 ' : ''}pl-10 relative">
+                        <span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full ${exp.isActive ? 'bg-blue-500 ring-4 ring-black shadow-[0_0_10px_rgba(59,130,246,0.8)]' : 'bg-gray-700 ring-4 ring-black border-2 border-gray-500'}"></span>
+                        <div class="glass-card p-7 rounded-xl border border-gray-800 transition-all duration-300 group shadow-lg hover:border-blue-500/50" data-aos="zoom-in-up" ${i > 0 ? 'data-aos-delay="100"' : ''}>
+                            <span class="${exp.isActive ? 'bg-blue-500/20 text-blue-400 border-blue-500/30' : 'bg-gray-800 text-gray-300'} text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block border">${exp.dates}</span>
+                            <h4 class="${exp.isActive ? 'text-xl' : 'text-lg'} font-bold text-white group-hover:text-blue-400 transition-colors">${exp.title}</h4>
+                            ${exp.company ? `<p class="text-gray-400 font-medium mb-5 text-sm uppercase tracking-wide">${exp.company}</p>` : ''}
+                            ${exp.isActive ? `
+                                <ul class="space-y-3 text-gray-300 text-sm list-inside">
+                                    ${exp.bullets.map(b => `
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0 text-xs"></i>
+                                            <span>${b}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            ` : `<p class="text-gray-400 text-sm mt-2 leading-relaxed">${exp.bullets[0]}</p>`}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Projects
+            const projectsContainer = document.getElementById('projects-container');
+            if (projectsContainer && PORTFOLIO_CONFIG.projects) {
+                projectsContainer.innerHTML = PORTFOLIO_CONFIG.projects.map((proj, i) => `
+                    <div data-aos="flip-up" ${i > 0 ? 'data-aos-delay="100"' : ''}
+                        class="glass-card p-8 rounded-xl border border-gray-800 transition-all duration-300 relative overflow-hidden group shadow-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(${proj.color === 'blue' ? '59,130,246' : '6,182,212'},0.6)] hover:border-${proj.color}-400 sap-data-card">
+                        <div class="absolute -top-6 -right-6 w-32 h-32 bg-${proj.color}-500/10 rounded-full blur-2xl group-hover:bg-${proj.color}-500/30 transition-all duration-500"></div>
+                        <div class="flex items-center justify-between mb-4 relative z-10">
+                            <h4 class="text-xl font-bold text-white group-hover:text-${proj.color}-400 transition-colors">${proj.title}</h4>
+                            <i class="${proj.icon} text-${proj.color}-500 text-3xl group-hover:animate-bounce"></i>
+                        </div>
+                        <p class="text-gray-300 text-sm mb-6 leading-relaxed relative z-10">${proj.desc}</p>
+                        <div class="flex flex-wrap gap-2 text-xs relative z-10">
+                            ${proj.tags.map(tag => `<span class="bg-${proj.color}-500/10 text-${proj.color}-300 px-3 py-1.5 rounded-md font-medium border border-${proj.color}-500/20">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
             // Apply links and names to all connected elements
             const elements = {
                 'hero-name': PORTFOLIO_CONFIG.name,

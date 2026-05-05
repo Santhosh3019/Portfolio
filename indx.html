@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-black">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santhosh Kumar M - Portfolio</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS (v3 CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%': { boxShadow: '0 0 10px rgba(59, 130, 246, 0.5)' },
+                            '100%': { boxShadow: '0 0 25px rgba(59, 130, 246, 0.9), 0 0 35px rgba(59, 130, 246, 0.6)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #f8fafc;
+        }
+
+        .glass-nav {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 5px rgba(6, 182, 212, 0.4);
+            }
+
+            100% {
+                text-shadow: 0 0 20px rgba(6, 182, 212, 0.8), 0 0 30px rgba(59, 130, 246, 0.6);
+            }
+        }
+
+        .animate-text-glow {
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        .typed-cursor {
+            color: #3b82f6;
+        }
+
+        /* ── Navbar link hover underline ── */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            border-radius: 9999px;
+            transition: width 0.35s ease, left 0.35s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: #60a5fa !important;
+        }
+
+        /* ── Floating shapes in hero ── */
+        @keyframes floatUp {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: .6;
+            }
+
+            50% {
+                transform: translateY(-28px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes floatX {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(20px);
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: .15;
+            }
+
+            50% {
+                opacity: .7;
+            }
+        }
+
+        @keyframes orbitRing {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .float-shape {
+            position: absolute;
+            border-radius: 50%;
+            animation: floatUp 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* ── Hero dots grid ── */
+        .hero-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
+            mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black, transparent);
+        }
+
+        /* ── Orbit ring around photo ── */
+        .orbit-wrap {
+            position: relative;
+            width: 400px;
+            height: 400px;
+        }
+
+        /* ── Zoom / Sonar Ripple animation around photo ── */
+        @keyframes rippleZoom {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1.6);
+                opacity: 0;
+            }
+        }
+
+        @keyframes photoBreathe {
+
+            0%,
+            100% {
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.35);
+            }
+
+            50% {
+                box-shadow: 0 0 45px rgba(59, 130, 246, 0.65), 0 0 70px rgba(6, 182, 212, 0.2);
+            }
+        }
+
+        .photo-zoom-wrap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            height: 400px;
+        }
+
+        /* Each ripple ring zooms out and fades */
+        .ripple {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1.5px solid rgba(59, 130, 246, 0.5);
+            animation: rippleZoom 3s ease-out infinite;
+            pointer-events: none;
+        }
+
+        .ripple:nth-child(2) {
+            animation-delay: 1s;
+            border-color: rgba(6, 182, 212, 0.4);
+        }
+
+        .ripple:nth-child(3) {
+            animation-delay: 2s;
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        /* Photo circle */
+        .photo-circle {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            animation: photoBreathe 4s ease-in-out infinite;
+            background: #000;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+        }
+
+
+        /* ── About card hover ── */
+        .about-card {
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .about-card:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.25), 0 20px 60px rgba(0, 0, 0, 0.6);
+            border-color: rgba(59, 130, 246, 0.4) !important;
+        }
+
+        /* ── 3D Flip Card Styles ── */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            max-width: 420px;
+            height: 600px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(-180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 40px;
+            /* overflow: hidden intentionally removed — it breaks preserve-3d in Chrome/Edge */
+        }
+
+        .flip-card-back {
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: white;
+            transform: rotateY(-180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem 1.5rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .skill-item {
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .flip-card:hover .skill-item {
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .pulse-btn {
+            animation: pulseBlue 2s infinite;
+        }
+
+        @keyframes pulseBlue {
+            0% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+            }
+        }
+
+        /* SAP Fiori Loading Screen */
+        #sap-loader {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        .fiori-spinner {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            animation: fiori-rotate 2s infinite linear;
+        }
+        .fiori-dot {
+            width: 40%;
+            height: 40%;
+            background-color: #3b82f6;
+            border-radius: 100%;
+            position: absolute;
+            top: 0; left: 0;
+            animation: fiori-bounce 2s infinite ease-in-out;
+        }
+        .fiori-dot:nth-child(2) { top: 0; right: 0; left: auto; animation-delay: -1.0s; }
+        .fiori-dot:nth-child(3) { bottom: 0; right: 0; left: auto; top: auto; animation-delay: -0.5s; }
+        .fiori-dot:nth-child(4) { bottom: 0; left: 0; top: auto; animation-delay: -1.5s; }
+        
+        @keyframes fiori-rotate { 100% { transform: rotate(360deg); } }
+        @keyframes fiori-bounce { 0%, 100% { transform: scale(0.0); } 50% { transform: scale(1.0); } }
+
+        /* SAP Data Flow Border Animation */
+        .sap-data-card {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .sap-data-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: conic-gradient(transparent, transparent, transparent, #3b82f6);
+            animation: rotateFlow 4s linear infinite;
+            z-index: -2;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+        .sap-data-card:hover::before {
+            opacity: 1;
+            background: conic-gradient(transparent, transparent, transparent, #06b6d4);
+        }
+        .sap-data-card::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: rgba(15, 15, 20, 0.95);
+            border-radius: inherit;
+            z-index: -1;
+        }
+        @keyframes rotateFlow { 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white">
+    <!-- SAP Fiori Loader -->
+    <div id="sap-loader">
+        <div class="fiori-spinner">
+            <div class="fiori-dot"></div>
+            <div class="fiori-dot"></div>
+            <div class="fiori-dot"></div>
+            <div class="fiori-dot"></div>
+        </div>
+    </div>
+
+    <!-- Particles Background -->
+    <div id="tsparticles" class="fixed inset-0 z-0 pointer-events-none opacity-40"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300 backdrop-blur-md" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-white tracking-wider">Santhosh Kumar M</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="nav-link text-gray-300 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-300 font-medium">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 font-medium">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-300 font-medium">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-300 font-medium">Projects</a>
+                    <a href="#contact"
+                        class="px-6 py-2 rounded-full bg-blue-600 text-white font-semibold hover:scale-110 hover:bg-blue-500 transition-all duration-300 shadow-[0_0_18px_rgba(59,130,246,0.5)] hover:shadow-[0_0_30px_rgba(59,130,246,0.9)] animate-pulse hover:animate-none">Hire
+                        Me</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black border-t border-gray-800 absolute w-full shadow-2xl">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home" class="block py-2 text-gray-300 hover:text-blue-500 font-medium mobile-link">Home</a>
+                <a href="#about" class="block py-2 text-gray-300 hover:text-blue-500 font-medium mobile-link">About</a>
+                <a href="#skills"
+                    class="block py-2 text-gray-300 hover:text-blue-500 font-medium mobile-link">Skills</a>
+                <a href="#experience"
+                    class="block py-2 text-gray-300 hover:text-blue-500 font-medium mobile-link">Experience</a>
+                <a href="#projects"
+                    class="block py-2 text-gray-300 hover:text-blue-500 font-medium mobile-link">Projects</a>
+                <a href="#contact" class="block py-2 text-blue-400 font-bold mobile-link">Hire Me / Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section id="home"
+        class="min-h-screen flex items-center justify-center pt-20 px-4 relative overflow-hidden bg-transparent z-10">
+        <!-- Dot-grid background -->
+        <div class="hero-dots"></div>
+        <!-- Floating ambient blobs -->
+        <div class="float-shape w-80 h-80 bg-blue-600/10 blur-[100px]" style="top:10%;left:5%;animation-delay:0s;">
+        </div>
+        <div class="float-shape w-64 h-64 bg-cyan-500/10 blur-[80px]"
+            style="bottom:15%;right:8%;animation-delay:2s;animation-duration:8s;"></div>
+        <div class="float-shape w-48 h-48 bg-indigo-600/10 blur-[70px]"
+            style="top:60%;left:30%;animation-delay:4s;animation-duration:10s;"></div>
+        <!-- Tiny animated particles -->
+        <div class="absolute"
+            style="top:15%;left:20%;width:6px;height:6px;border-radius:50%;background:#3b82f6;animation:blink 3s infinite 0s;">
+        </div>
+        <div class="absolute"
+            style="top:25%;left:75%;width:5px;height:5px;border-radius:50%;background:#06b6d4;animation:blink 4s infinite 1s;">
+        </div>
+        <div class="absolute"
+            style="top:70%;left:15%;width:4px;height:4px;border-radius:50%;background:#818cf8;animation:blink 5s infinite 2s;">
+        </div>
+        <div class="absolute"
+            style="top:80%;left:60%;width:6px;height:6px;border-radius:50%;background:#3b82f6;animation:blink 3.5s infinite 0.5s;">
+        </div>
+        <div class="absolute"
+            style="top:45%;left:88%;width:5px;height:5px;border-radius:50%;background:#06b6d4;animation:blink 4.5s infinite 1.5s;">
+        </div>
+        <!-- Home Information and Photo (Single Layer) -->
+        <div class="max-w-7xl mx-auto w-full z-10 px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+                <div class="flex flex-col space-y-6 lg:col-span-3 text-center lg:text-left">
+                        <p class="text-blue-500 font-semibold tracking-wide text-lg uppercase" data-aos="fade-right"
+                            data-aos-delay="200">Welcome to my portfolio</p>
+                        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight flex flex-wrap items-center justify-center lg:justify-start gap-x-3 text-white"
+                            data-aos="fade-right" data-aos-delay="400">
+                            Hi, I am <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600"
+                                id="hero-name">Santhosh Kumar M</span>
+                        </h1>
+                        <h2 class="text-xl md:text-3xl text-gray-400 font-medium h-10" data-aos="fade-right"
+                            data-aos-delay="600">
+                            I am a <span id="typed-text" class="text-blue-400"></span>
+                        </h2>
+                        <p class="text-gray-400 max-w-lg mt-4 text-lg leading-relaxed mx-auto lg:mx-0" data-aos="fade-right"
+                            data-aos-delay="800">
+                            Automating payment workflows (DMEE, F110) and implementing real-time reporting (R2T2R) to streamline client reconciliation and support critical financial operations.
+                        </p>
+                    <div class="flex flex-col sm:flex-row gap-5 mt-8 justify-center lg:pr-24" data-aos="fade-up"
+                        data-aos-delay="1000">
+                        <a href="https://drive.google.com/file/d/14bOPhtivBbFAsOyFWDwnYchEWqrzDuvv/view?usp=sharing"
+                            target="_blank"
+                            class="px-8 py-3.5 rounded-full bg-blue-600 text-white font-bold text-lg uppercase tracking-wider hover:scale-110 hover:bg-blue-500 transition-all duration-300 animate-pulse hover:animate-none text-center shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:shadow-[0_0_40px_rgba(59,130,246,0.8)]">
+                            Download CV
+                        </a>
+                    </div>
+                    <div class="flex space-x-5 mt-8 justify-center lg:justify-start" data-aos="fade-up"
+                        data-aos-delay="1200">
+                        <a href="#" id="hero-linkedin" target="_blank"
+                            class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-blue-500 hover:-translate-y-2 transition-all text-xl shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" id="hero-email"
+                            class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-blue-500 hover:-translate-y-2 transition-all text-xl shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" id="hero-whatsapp" target="_blank"
+                            class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-green-400 hover:-translate-y-2 transition-all text-xl shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_15px_rgba(34,197,94,0.4)]">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 flex justify-center items-center" data-aos="fade-left"
+                    data-aos-duration="1200">
+                    <!-- Interactive 3D Flip Card -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <!-- Front: Photo -->
+                            <div class="flip-card-front glass-card p-4 border border-white/5 shadow-2xl">
+                                <img id="profile-img" src="photo_cutout.png" alt="Santhosh Kumar M"
+                                    class="w-full h-full object-cover rounded-[32px]">
+                            </div>
+                            <div class="flip-card-back shadow-2xl">
+                                <h3 class="text-xl font-bold text-blue-400 mb-1">SAP FICO Consultant</h3>
+                                <p class="text-gray-400 text-xs mb-5">Professional Summary</p>
+                                <div class="w-12 h-1 bg-blue-500 mb-8 rounded-full shadow-[0_0_10px_#3b82f6]"></div>
+                                <div class="space-y-4 mb-10 text-left w-full px-6">
+                                    <div class="skill-item flex items-center space-x-3" style="animation-delay: 0.1s;">
+                                        <i class="fas fa-check-circle text-blue-500 text-sm"></i>
+                                        <p class="text-xs text-gray-300">SAP FI Core: <span class="text-white">GL, AP, AR, Bank Accounting</span></p>
+                                    </div>
+                                    <div class="skill-item flex items-center space-x-3" style="animation-delay: 0.2s;">
+                                        <i class="fas fa-check-circle text-blue-500 text-sm"></i>
+                                        <p class="text-xs text-gray-300">Automation: <span class="text-white">DMEE & F110 Workflows</span></p>
+                                    </div>
+                                    <div class="skill-item flex items-center space-x-3" style="animation-delay: 0.3s;">
+                                        <i class="fas fa-check-circle text-blue-500 text-sm"></i>
+                                        <p class="text-xs text-gray-300">Reporting: <span class="text-white">R2T2R & Balance Visibility</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-24 px-4 bg-transparent relative z-10" data-aos="fade-up">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <!-- Glowing animate class applied below -->
+                <h2 class="text-3xl md:text-4xl font-bold inline-block border-b-4 border-blue-500 pb-2 text-white">About
+                    Me</h2>
+            </div>
+            <div class="glass-card about-card rounded-2xl p-8 md:p-12 shadow-2xl border border-transparent">
+                <div class="grid md:grid-cols-12 gap-10 items-center">
+                    <div class="md:col-span-8 space-y-6">
+                        <h3 class="text-2xl font-semibold text-blue-400">Career Objective</h3>
+                        <p class="text-gray-300 leading-relaxed text-lg">
+                            Results-driven SAP FICO Consultant with <span id="exp-inline">2</span> years of consultancy experience delivering robust financial solutions. Proven expertise in automating payment workflows (DMEE, F110) for J.P. Morgan corporate customers, and implementing real-time reporting (R2T2R) to ensure immediate balance visibility, streamline client reconciliation, and support critical financial operations.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-gray-800 mt-6">
+                            <div>
+                                <span class="block text-gray-500 text-sm mb-1">Experience</span>
+                                <span id="exp-badge" class="font-semibold text-gray-200">2+ Years</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-500 text-sm mb-1">Role</span>
+                                <span class="font-semibold text-gray-200">SAP FICO Consultant</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-500 text-sm mb-1">Specialty</span>
+                                <span class="font-semibold text-gray-200">DMEE & F110</span>
+                            </div>
+                            <div>
+                                <span class="block text-gray-500 text-sm mb-1">Location</span>
+                                <span class="font-semibold text-gray-200">Chennai</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="md:col-span-4 flex flex-col items-center justify-center space-y-6 md:border-l border-gray-800 md:pl-8 pt-8 md:pt-0 border-t md:border-t-0">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 mx-auto bg-[#1a1a1a] rounded-full flex items-center justify-center mb-4 shadow-lg border border-gray-800">
+                                <i class="fas fa-graduation-cap text-3xl text-blue-500"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-200">Education</h4>
+                            <p class="text-sm text-gray-400 mt-2 font-medium">B.E. in Electronics & Communication Eng.</p>
+                            <p class="text-xs text-blue-400 mt-1">P.S.R Engineering College, Sivakasi</p>
+                            <p class="text-xs text-gray-500 mt-1">Aug 2019 – April 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-4 bg-transparent relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <!-- Glowing Cyan/Blue -->
+                <h2
+                    class="text-3xl md:text-4xl font-bold inline-block border-b-4 border-blue-500 pb-2 text-white animate-text-glow">
+                    Technical Skills</h2>
+                <p class="text-gray-400 mt-4 text-lg">My proven expertise and core competencies</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Group 1: SAP FI -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl border border-gray-800 shadow-xl">
+                    <h3 class="text-xl font-semibold mb-8 flex items-center text-blue-400">
+                        <span class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mr-4">
+                            <i class="fas fa-database text-blue-500"></i>
+                        </span>
+                        SAP FI Modules
+                    </h3>
+                    <div class="grid grid-cols-2 gap-5">
+                        <div
+                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] hover:border-emerald-500/50 bg-gradient-to-b hover:from-emerald-500/10 hover:to-transparent">
+                            <i
+                                class="fas fa-book-open text-3xl text-gray-500 group-hover:text-emerald-500 transition-colors mb-4 block"></i>
+                            <h4 class="font-medium text-gray-200 text-sm">General Ledger (GL)</h4>
+                        </div>
+                        <div
+                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(245,158,11,0.5)] hover:border-amber-500/50 bg-gradient-to-b hover:from-amber-500/10 hover:to-transparent">
+                            <i
+                                class="fas fa-file-invoice-dollar text-3xl text-gray-500 group-hover:text-amber-500 transition-colors mb-4 block"></i>
+                            <h4 class="font-medium text-gray-200 text-sm">Accounts Payable (AP)</h4>
+                        </div>
+                        <div
+                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:border-purple-500/50 bg-gradient-to-b hover:from-purple-500/10 hover:to-transparent">
+                            <i
+                                class="fas fa-hand-holding-usd text-3xl text-gray-500 group-hover:text-purple-500 transition-colors mb-4 block"></i>
+                            <h4 class="font-medium text-gray-200 text-sm">Accounts Receivable (AR)</h4>
+                        </div>
+                        <div
+                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(244,63,94,0.5)] hover:border-rose-500/50 bg-gradient-to-b hover:from-rose-500/10 hover:to-transparent">
+                            <i
+                                class="fas fa-building text-3xl text-gray-500 group-hover:text-rose-500 transition-colors mb-4 block"></i>
+                            <h4 class="font-medium text-gray-200 text-sm">Enterprise Structure</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Group 2: Technical -->
+                <div class="bg-[#0a0a0a] p-8 rounded-2xl border border-gray-800 shadow-xl">
+                    <h3 class="text-xl font-semibold mb-8 flex items-center text-blue-400">
+                        <span class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center mr-4">
+                            <i class="fas fa-laptop-code text-blue-500"></i>
+                        </span>
+                        Technical & Testing Focus
+                    </h3>
+                    <div class="grid grid-cols-2 gap-5">
+                        <div
+                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] hover:border-cyan-500/50 bg-gradient-to-b hover:from-cyan-500/10 hover:to-transparent">
+                            <i
+                                class="fas fa-cogs text-3xl text-gray-500 group-hover:text-cyan-500 transition-colors mb-4 block"></i>
+                            <h4 class="font-medium text-gray-200 text-sm">DMEE & F110 Auto</h4>
+                        </div>
+                        <div
+                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:border-blue-500/50 bg-gradient-to-b hover:from-blue-500/10 hover:to-transparent">
+                            <i
+                                class="fas fa-university text-3xl text-gray-500 group-hover:text-blue-500 transition-colors mb-4 block"></i>
+                            <h4 class="font-medium text-gray-200 text-sm">EBS (OT83) & Bank Recon</h4>
+                        </div>
+                        <div
+                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(249,115,22,0.5)] hover:border-orange-500/50 bg-gradient-to-b hover:from-orange-500/10 hover:to-transparent">
+                            <i
+                                class="fas fa-chart-line text-3xl text-gray-500 group-hover:text-orange-500 transition-colors mb-4 block"></i>
+                            <h4 class="font-medium text-gray-200 text-sm">Real-time Reporting (R2T2R)</h4>
+                        </div>
+                        <div
+                            class="glass-card p-6 rounded-xl border border-gray-800 text-center group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(217,70,239,0.5)] hover:border-fuchsia-500/50 bg-gradient-to-b hover:from-fuchsia-500/10 hover:to-transparent">
+                            <i
+                                class="fas fa-tools text-3xl text-gray-500 group-hover:text-fuchsia-500 transition-colors mb-4 block"></i>
+                            <h4 class="font-medium text-gray-200 text-sm">Core FI Setup & Troubleshooting</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience & Projects Section -->
+    <section id="experience" class="py-24 px-4 bg-transparent relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <!-- Glowing Cyan/Blue animate applied below -->
+                <h2
+                    class="text-3xl md:text-4xl font-bold inline-block border-b-4 border-blue-500 pb-2 text-white animate-text-glow">
+                    Experience & Projects</h2>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Timeline Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-10 flex items-center text-gray-100">
+                        <i class="fas fa-briefcase text-blue-500 mr-4 text-xl"></i> Professional Journey
+                    </h3>
+                    <div class="relative border-l-2 border-gray-800 ml-4 md:ml-6">
+                        <!-- Timeline Item 1 -->
+                        <div class="mb-12 pl-10 relative">
+                            <span
+                                class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-blue-500 ring-4 ring-black shadow-[0_0_10px_rgba(59,130,246,0.8)]"></span>
+                            <div
+                                class="glass-card p-7 rounded-xl border border-gray-800 transition-all duration-300 group shadow-lg hover:border-blue-500/50" data-aos="zoom-in-up">
+                                <span
+                                    class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block border border-blue-500/30">June
+                                    2024 - Present</span>
+                                <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">SAP FICO Consultant</h4>
+                                <p class="text-gray-400 font-medium mb-5 text-sm uppercase tracking-wide">Findroids Technology Solutions India Pvt. Ltd.</p>
+                                <ul class="space-y-3 text-gray-300 text-sm list-inside">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0 text-xs"></i>
+                                        <span>Delivered ready-to-use <strong class="text-blue-400 font-semibold">DMEE structures and F110 pre-configuration templates</strong>, alongside end-to-end core setups, streamlining complex payment processes for J.P. Morgan corporate customers.</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-blue-500 mt-1 mr-3 flex-shrink-0 text-xs"></i>
+                                        <span>Implemented <strong class="text-blue-400 font-semibold">R2T2R solutions</strong> for J.P. Morgan customers such as Pauls Corp and Fresenius, providing immediate financial balance visibility.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Timeline Item 2 -->
+                        <div class="pl-10 relative">
+                            <span class="absolute -left-[11px] top-1 w-5 h-5 rounded-full bg-gray-700 ring-4 ring-black border-2 border-gray-500"></span>
+                            <div class="glass-card p-7 rounded-xl border border-gray-800 shadow-lg transition-all duration-300 group hover:border-blue-500/50" data-aos="zoom-in-up" data-aos-delay="100">
+                                <span class="bg-gray-800 text-gray-300 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">Earlier Consultancy</span>
+                                <h4 class="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">Profile Summary: Payment Initiation & Reporting</h4>
+                                <p class="text-gray-400 text-sm mt-2 leading-relaxed">Delivered dedicated consultancy in implementing real-time reporting solutions, enhancing daily reconciliation and data accuracy. Skilled in ensuring accurate payment file generation for clients operating as J.P. Morgan corporate customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projects -->
+                <div id="projects" class="pt-2 lg:pt-0">
+                    <h3 class="text-2xl font-bold mb-10 flex items-center text-gray-100">
+                        <i class="fas fa-project-diagram text-blue-500 mr-4 text-xl"></i> Key Projects
+                    </h3>
+                    <div class="space-y-8">
+                        <!-- Project 1 -->
+                        <div data-aos="flip-up"
+                            class="glass-card p-8 rounded-xl border border-gray-800 transition-all duration-300 relative overflow-hidden group shadow-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] hover:border-blue-400 sap-data-card">
+                            <!-- Decorative background accent -->
+                            <div
+                                class="absolute -top-6 -right-6 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/30 transition-all duration-500">
+                            </div>
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                                    Payment Initiation (J.P. Morgan)</h4>
+                                <i class="fas fa-file-invoice-dollar text-blue-500 text-3xl group-hover:animate-bounce"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed relative z-10">Delivered ready-to-use DMEE structures and F110 pre-configuration templates, alongside comprehensive end-to-end core setups (FBZP, BP Grouping). Streamlined complex, high-volume payment processes for J.P. Morgan corporate customers including PTTEP and JL Cohen.</p>
+                            <div class="flex flex-wrap gap-2 text-xs relative z-10">
+                                <span
+                                    class="bg-blue-500/10 text-blue-300 px-3 py-1.5 rounded-md font-medium border border-blue-500/20">DMEE</span>
+                                <span
+                                    class="bg-blue-500/10 text-blue-300 px-3 py-1.5 rounded-md font-medium border border-blue-500/20">F110</span>
+                                <span
+                                    class="bg-blue-500/10 text-blue-300 px-3 py-1.5 rounded-md font-medium border border-blue-500/20">FBZP</span>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div data-aos="flip-up" data-aos-delay="100"
+                            class="glass-card p-8 rounded-xl border border-gray-800 transition-all duration-300 relative overflow-hidden group shadow-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(6,182,212,0.6)] hover:border-cyan-400 sap-data-card">
+                            <div
+                                class="absolute -bottom-6 -right-6 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/30 transition-all duration-500">
+                            </div>
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                                    R2T2R & EBS Uploads</h4>
+                                <i class="fas fa-chart-line text-cyan-500 text-3xl group-hover:animate-pulse"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm mb-6 leading-relaxed relative z-10">Implemented Real-Time Transaction Reporting (R2T2R) solutions and Electronic Bank Statement (EBS) upload processes (OT83) for J.P. Morgan customers (Pauls Corp, Fresenius). Provided immediate financial balance visibility to enhance daily reconciliation workflows.</p>
+                            <div class="flex flex-wrap gap-2 text-xs relative z-10">
+                                <span
+                                    class="bg-cyan-500/10 text-cyan-300 px-3 py-1.5 rounded-md font-medium border border-cyan-500/20">R2T2R</span>
+                                <span
+                                    class="bg-cyan-500/10 text-cyan-300 px-3 py-1.5 rounded-md font-medium border border-cyan-500/20">OT83</span>
+                                <span
+                                    class="bg-cyan-500/10 text-cyan-300 px-3 py-1.5 rounded-md font-medium border border-cyan-500/20">Reconciliation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-4 bg-transparent border-t border-gray-900 relative z-10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold inline-block border-b-4 border-blue-500 pb-2 text-white">
+                    Contact Me</h2>
+                <p class="text-gray-400 mt-4 text-lg">Let's discuss how my SAP FI & Testing expertise can add value to
+                    your team.</p>
+            </div>
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Left Side: Direct Contact Cards -->
+                    <div class="lg:col-span-5 space-y-6 pt-2">
+                        <!-- Email Card -->
+                        <a href="#" id="contact-email" class="block cursor-pointer">
+                            <div class="glass-card rounded-3xl p-6 border border-white/5 hover:border-blue-500/30 transition-all duration-300 shadow-xl group"
+                                data-aos="fade-right">
+                                <div class="flex items-center space-x-5">
+                                    <div
+                                        class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                                        <i class="fas fa-envelope text-xl"></i>
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <h4 class="text-white font-bold">Email</h4>
+                                        <p class="text-gray-400 text-sm truncate" id="contact-email-text">
+                                            connectwithsanthoshkumar.m@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Teams Card -->
+                        <a href="#" id="contact-teams" target="_blank" class="block cursor-pointer">
+                            <div class="glass-card rounded-3xl p-6 border border-white/5 hover:border-[#464EB8]/30 transition-all duration-300 shadow-xl group"
+                                data-aos="fade-right" data-aos-delay="100">
+                                <div class="flex items-center space-x-5">
+                                    <div
+                                        class="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden shadow-inner">
+                                        <!-- Teams SVG Icon ... -->
+                                        <svg class="w-10 h-10" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                            fill="none">
+                                            <path fill="#5059C9"
+                                                d="M10.765 6.875h3.616c.342 0 .619.276.619.617v3.288a2.272 2.272 0 01-2.274 2.27h-.01a2.272 2.272 0 01-2.274-2.27V7.199c0-.179.145-.323.323-.323zM13.21 6.225c.808 0 1.464-.655 1.464-1.462 0-.808-.656-1.463-1.465-1.463s-1.465.655-1.465 1.463c0 .807.656 1.462 1.465 1.462z" />
+                                            <path fill="#7B83EB"
+                                                d="M8.651 6.225a2.114 2.114 0 002.117-2.112A2.114 2.114 0 008.65 2a2.114 2.114 0 00-2.116 2.112c0 1.167.947 2.113 2.116 2.113zM11.473 6.875h-5.97a.611.611 0 00-.596.625v3.75A3.669 3.669 0 008.488 15a3.669 3.669 0 003.582-3.75V7.5a.611.611 0 00-.597-.625z" />
+                                            <path fill="#000000"
+                                                d="M8.814 6.875v5.255a.598.598 0 01-.596.595H5.193a3.951 3.951 0 01-.287-1.476V7.5a.61.61 0 01.597-.624h3.31z"
+                                                opacity=".1" />
+                                            <path fill="#000000"
+                                                d="M8.488 6.875v5.58a.6.6 0 01-.596.595H5.347a3.22 3.22 0 01-.267-.65 3.951 3.951 0 01-.172-1.15V7.498a.61.61 0 01.596-.624h2.985z"
+                                                opacity=".2" />
+                                            <path fill="#000000"
+                                                d="M8.488 6.875v4.93a.6.6 0 01-.596.595H5.08a3.951 3.951 0 01-.172-1.15V7.498a.61.61 0 01.596-.624h2.985z"
+                                                opacity=".2" />
+                                            <path fill="#000000"
+                                                d="M8.163 6.875v4.93a.6.6 0 01-.596.595H5.079a3.951 3.951 0 01-.172-1.15V7.498a.61.61 0 01.596-.624h2.66z"
+                                                opacity=".2" />
+                                            <path fill="#000000"
+                                                d="M8.814 5.195v1.024c-.055.003-.107.006-.163.006-.055 0-.107-.003-.163-.006A2.115 2.115 0 016.593 4.6h1.625a.598.598 0 01.596.594z"
+                                                opacity=".1" />
+                                            <path fill="#000000"
+                                                d="M8.488 5.52v.699a2.115 2.115 0 01-1.79-1.293h1.195a.598.598 0 01.595.594z"
+                                                opacity=".2" />
+                                            <path fill="#000000"
+                                                d="M8.488 5.52v.699a2.115 2.115 0 01-1.79-1.293h1.195a.598.598 0 01.595.594z"
+                                                opacity=".2" />
+                                            <path fill="#000000"
+                                                d="M8.163 5.52v.647a2.115 2.115 0 01-1.465-1.242h.87a.598.598 0 01.595.595z"
+                                                opacity=".2" />
+                                            <path fill="url(#microsoft-teams-color-16__paint0_linear_2372_494)"
+                                                d="M1.597 4.925h5.969c.33 0 .597.267.597.596v5.958a.596.596 0 01-.597.596h-5.97A.596.596 0 011 11.479V5.521c0-.33.267-.596.597-.596z" />
+                                            <path fill="#ffffff"
+                                                d="M6.152 7.193H4.959v3.243h-.76V7.193H3.01v-.63h3.141v.63z" />
+                                            <defs>
+                                                <linearGradient id="microsoft-teams-color-16__paint0_linear_2372_494"
+                                                    x1="2.244" x2="6.906" y1="4.46" y2="12.548"
+                                                    gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#5A62C3" />
+                                                    <stop offset=".5" stop-color="#4D55BD" />
+                                                    <stop offset="1" stop-color="#3940AB" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-bold">Microsoft Teams</h4>
+                                        <p class="text-gray-400 text-sm text-blue-400">Available Now</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- LinkedIn Card -->
+                        <a href="#" id="contact-linkedin" target="_blank" class="block cursor-pointer">
+                            <div class="glass-card rounded-3xl p-6 border border-white/5 hover:border-blue-400/30 transition-all duration-300 shadow-xl group"
+                                data-aos="fade-right" data-aos-delay="200">
+                                <div class="flex items-center space-x-5">
+                                    <div
+                                        class="w-12 h-12 bg-[#0077b5] rounded-full flex items-center justify-center text-white">
+                                        <i class="fab fa-linkedin-in text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white font-bold">LinkedIn</h4>
+                                        <p class="text-gray-400 text-sm" id="contact-linkedin-text">Santhosh Kumar M</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Right Side: Contact Form -->
+                    <div class="lg:col-span-7 lg:pl-10">
+                        <div class="glass-card rounded-[40px] p-8 md:p-10 shadow-2xl border border-white/5"
+                            data-aos="fade-left">
+                            <form action="https://api.web3forms.com/submit" method="POST" id="contact-form"
+                                class="space-y-6">
+                                <input type="hidden" name="access_key" value="02111403-a9a9-4cc7-9ed5-0408cfbcd96b">
+                                <input type="hidden" name="subject" value="New Inquiry from Portfolio">
+                                <div id="form-content" class="space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-6">
+                                        <div class="relative group">
+                                            <input type="text" name="name" required placeholder=" "
+                                                class="peer w-full bg-white/5 border-b-2 border-gray-700 pt-6 pb-2 px-4 text-white focus:border-blue-500 transition-all outline-none rounded-t-lg">
+                                            <label
+                                                class="absolute left-4 top-1 text-gray-500 text-xs uppercase tracking-widest transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-500 pointer-events-none">
+                                                Your Full Name
+                                            </label>
+                                        </div>
+                                        <div class="relative group">
+                                            <input type="email" name="email" required placeholder=" "
+                                                class="peer w-full bg-white/5 border-b-2 border-gray-700 pt-6 pb-2 px-4 text-white focus:border-blue-500 transition-all outline-none rounded-t-lg">
+                                            <label
+                                                class="absolute left-4 top-1 text-gray-500 text-xs uppercase tracking-widest transition-all peer-placeholder-shown:top-6 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-500 pointer-events-none">
+                                                Your Mail
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="relative group">
+                                        <textarea name="message" required rows="4" placeholder=" "
+                                            class="peer w-full bg-white/5 border-b-2 border-gray-700 pt-8 pb-2 px-4 text-white focus:border-blue-500 transition-all outline-none rounded-t-lg resize-none"></textarea>
+                                        <label
+                                            class="absolute left-4 top-1 text-gray-500 text-xs uppercase tracking-widest transition-all peer-placeholder-shown:top-8 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-blue-500 pointer-events-none">
+                                            Your Message
+                                        </label>
+                                    </div>
+                                    <button type="submit" id="submit-btn"
+                                        class="pulse-btn w-full py-4 rounded-xl bg-blue-600 text-white font-bold uppercase tracking-widest hover:bg-blue-500 transition-all shadow-lg">
+                                        Send Message
+                                    </button>
+                                </div>
+                                <!-- Creative Success Message (Hidden by default) -->
+                                <div id="success-message"
+                                    class="hidden flex flex-col items-center justify-center py-10 text-center space-y-6 animate-zoomIn">
+                                    <div
+                                        class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                                        <i class="fas fa-check text-white text-4xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-2xl font-bold text-white mb-2">Strategic Connection Established!
+                                        </h4>
+                                        <p class="text-gray-400">Your inquiry has been successfully processed into my
+                                            professional pipeline. I'll reach out shortly to discuss how we can
+                                            transform your financial processes together.</p>
+                                    </div>
+                                    <button type="button" onclick="location.reload()"
+                                        class="text-blue-500 underline text-sm hover:text-blue-400 transition-all">Send
+                                        another message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-10 bg-[#050505] border-t border-gray-900 text-center">
+        <p class="text-gray-400 text-sm font-medium">
+            &copy;
+            <script>document.write(new Date().getFullYear())</script> <span class="text-white font-semibold"
+                id="footer-name">Santhosh Kumar M</span>. Designed with <i class="fas fa-bolt text-blue-500 mx-1"></i>
+        </p>
+    </footer>
+    <!-- Typed.js for typing animation -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // ==========================================
+        // CENTRAL SETTINGS - EDIT YOUR INFO HERE
+        // ==========================================
+        const PORTFOLIO_CONFIG = {
+            name: "Santhosh Kumar M",
+            role: "SAP FICO Consultant",
+            email: "connectwithsanthoshkumar.m@gmail.com",
+            whatsapp: "916374652498",
+            linkedin: "https://www.linkedin.com/in/santhosh-kumar-m-775619259/",
+            cv_link: "https://drive.google.com/file/d/19NhJXhfDlT9iBMs0zeCw5D4mXOf9Q6Mz/view?usp=sharing",
+            sap_portfolio_link: "https://drive.google.com/file/d/19NhJXhfDlT9iBMs0zeCw5D4mXOf9Q6Mz/view?usp=sharing",
+            experience_start_date: new Date(2024, 5, 1) // June 1, 2024
+        };
+        // SAP Boot Loader Logic
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const loader = document.getElementById('sap-loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    setTimeout(() => loader.style.visibility = 'hidden', 800);
+                }
+            }, 1200); // 1.2s delay to simulate connection
+        });
+
+        // Dynamic Data Binding
+        document.addEventListener('DOMContentLoaded', function () {
+            // Apply links and names to all connected elements
+            const elements = {
+                'hero-name': PORTFOLIO_CONFIG.name,
+                'hero-linkedin': (el) => el.href = PORTFOLIO_CONFIG.linkedin,
+                'hero-email': (el) => el.href = "mailto:" + PORTFOLIO_CONFIG.email,
+                'hero-whatsapp': (el) => el.href = "https://wa.me/" + PORTFOLIO_CONFIG.whatsapp,
+                'contact-email': (el) => el.href = "mailto:" + PORTFOLIO_CONFIG.email,
+                'contact-email-text': PORTFOLIO_CONFIG.email,
+                'contact-linkedin': (el) => el.href = PORTFOLIO_CONFIG.linkedin,
+                'contact-teams': (el) => el.href = "https://teams.microsoft.com/l/chat/0/0?users=" + PORTFOLIO_CONFIG.email,
+                'footer-name': PORTFOLIO_CONFIG.name
+            };
+            Object.keys(elements).forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (typeof elements[id] === 'function') elements[id](el);
+                    else el.textContent = elements[id];
+                }
+            });
+            // Initial Typing Animation
+            if (document.getElementById('typed-text')) {
+                var typed = new Typed('#typed-text', {
+                    strings: [PORTFOLIO_CONFIG.role],
+                    typeSpeed: 40,
+                    backSpeed: 45,
+                    backDelay: 3000,
+                    loop: true,
+                    cursorChar: '|'
+                });
+            }
+        });
+        // Dynamic Experience Calculator
+        (function () {
+            var start = PORTFOLIO_CONFIG.experience_start_date;
+            var now = new Date();
+            var totalMonths = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+            var fullYears = Math.floor(totalMonths / 12);
+            var remainingMonths = totalMonths % 12;
+            var displayExp = fullYears + "." + remainingMonths;
+            if (remainingMonths === 0) displayExp = fullYears;
+            
+            const ids = ['exp-badge', 'exp-inline', 'exp-prev'];
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (id === 'exp-badge') el.textContent = displayExp + ' Years';
+                    else if (id === 'exp-inline') el.textContent = displayExp;
+                    else if (id === 'exp-prev') el.textContent = 'Previous ' + displayExp + ' Years';
+                }
+            });
+        })();
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        // Close mobile menu on clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-lg');
+                nav.style.background = 'rgba(0, 0, 0, 0.85)';
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.style.background = 'rgba(0, 0, 0, 0.5)';
+            }
+        });
+        // Form Submission Script
+        const form = document.getElementById('contact-form');
+        const formContent = document.getElementById('form-content');
+        const successMessage = document.getElementById('success-message');
+        const submitBtn = document.getElementById('submit-btn');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Processing Transmission...';
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        formContent.classList.add('hidden');
+                        successMessage.classList.remove('hidden');
+                    } else {
+                        console.log(response);
+                        alert("Submission error: " + json.message);
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    alert("Something went wrong!");
+                })
+                .then(function () {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                });
+        });
+        // AOS Initialization
+        AOS.init({
+            once: true,
+            mirror: false
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-preset-links@2/tsparticles.preset.links.bundle.min.js"></script>
+    <script>
+
+        tsParticles.load("tsparticles", {
+            preset: "links",
+            background: { color: { value: "transparent" } },
+            particles: {
+                color: { value: "#3b82f6" },
+                links: { color: "#06b6d4", enable: true, opacity: 0.4 },
+                move: { enable: true, speed: 2, attract: { enable: true, rotateX: 600, rotateY: 1200 } },
+                size: { value: 3, animation: { enable: true, speed: 4, minimumValue: 0.5 } },
+                number: { value: 100 }
+            },
+            interactivity: {
+                events: {
+                    onHover: { enable: true, mode: "grab" },
+                    onClick: { enable: true, mode: "push" }
+                },
+                modes: { grab: { distance: 200, links: { opacity: 0.8 } }, push: { quantity: 4 } }
+            }
+        });
+    </script>
+</body>
+
+</html>

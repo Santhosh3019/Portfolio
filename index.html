@@ -539,16 +539,10 @@
                         </a>
                     </div>
                 </div>
-                <div class="lg:col-span-2 flex justify-center items-center relative" data-aos="fade-left"
+                <div class="lg:col-span-2 flex justify-center items-center" data-aos="fade-left"
                     data-aos-duration="1200">
-                    <!-- Holographic orbiting rings -->
-                    <div class="absolute w-[300px] h-[300px] md:w-[350px] md:h-[350px] rounded-full border-[3px] border-blue-500/20 animate-[spin_10s_linear_infinite] border-t-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
-                    <div class="absolute w-[330px] h-[330px] md:w-[390px] md:h-[390px] rounded-full border-[2px] border-cyan-500/10 animate-[spin_15s_linear_infinite_reverse] border-b-cyan-500 shadow-[0_0_20px_rgba(6,182,212,0.3)]"></div>
-                    <!-- Floating Data Particles -->
-                    <div class="absolute w-3 h-3 bg-blue-400 rounded-full animate-bounce shadow-[0_0_10px_#3b82f6]" style="top: -10px; left: 50%;"></div>
-                    <div class="absolute w-2 h-2 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_10px_#06b6d4]" style="bottom: 20px; right: -5px;"></div>
                     <!-- Interactive 3D Flip Card -->
-                    <div class="flip-card relative z-10 hover:scale-105 transition-transform duration-500">
+                    <div class="flip-card">
                         <div class="flip-card-inner">
                             <!-- Front: Photo -->
                             <div class="flip-card-front glass-card p-4 border border-white/5 shadow-2xl">
@@ -1193,8 +1187,8 @@
             particles: {
                 color: { value: "#3b82f6" },
                 links: { color: "#06b6d4", enable: true, opacity: 0.4 },
-                move: { enable: true, speed: 2, attract: { enable: true, rotateX: 600, rotateY: 1200 } },
-                size: { value: 3, animation: { enable: true, speed: 4, minimumValue: 0.5 } },
+                move: { enable: true, speed: 0.8, attract: { enable: true, rotateX: 600, rotateY: 1200 } },
+                size: { value: 3, animation: { enable: true, speed: 1.5, minimumValue: 0.5 } },
                 number: { value: 100 }
             },
             interactivity: {
